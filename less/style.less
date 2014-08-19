@@ -13,11 +13,13 @@
 @cso-ltblue: rgb(245,245,245);
 @black: rgb(51,51,51);
 @white: rgb(255,255,255);
+@grey: rgb(153,153,153);
 
 // Fonts
 
 .roboto {
 	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
 }
 
 .condensed {
@@ -28,6 +30,7 @@
 
 body {
 	.roboto;
+	color: @black;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,20 +42,38 @@ a {
 	text-decoration:none;
 	
 	&:hover, &:active, &:focus {
-		color: @cso-dkblue;
+		color: darken(@cso-blue, 20%);
+	}
+}
+
+.grey-link {
+	a {
+		color: @grey;
+		
+		&:hover, &:active, &:focus {
+			color: darken(@grey, 20%);
+		}
 	}
 }
 
 // Buttons
 
-.button {
-	background-color: @cso-orange;
+.button-orange, .button-blue {
 	border-radius: 3px;
 	padding:1px 5px;
+	border:none;
+	
+	&:hover, &:active, &:focus {
+		transition: background-color .5s ease-in-out;
+	}
+}
+
+.button-orange {
+	background-color: @cso-orange;
+	color:@white;
 	
 	&:hover, &:active, &:focus {
 		background-color: lighten(@cso-orange, 10%);
-		transition: background-color .5s ease-in-out;
 	}
 	
 	a {
@@ -63,7 +84,30 @@ a {
 	}
 }
 
-		
+.button-blue {
+	background-color: @cso-blue;
+	color:@white;
+	
+	&:hover, &:active, &:focus {
+		background-color: lighten(@cso-blue, 10%);
+	}
+	
+	a {
+		color:@white;
+		&:hover, &:active, &:focus {
+			color:@white;
+		}
+	}
+}
+
+input[type="submit"] {
+	.button-blue;
+	.roboto;
+	padding-bottom: 2.2px;
+}
+
+	
+// Logo
 
 .cso-circle {
 	fill: @cso-blue;
@@ -77,15 +121,12 @@ a {
 	fill: lighten(@cso-blue, 25%);
 }
 
+
 // Header
 
 #header {
 	width:100%;
-	height:200px;
-	
-	.contact {
-		float:right;
-	}
+	height:160px;
 
 	.logo {
 		margin:20px;
@@ -114,15 +155,40 @@ a {
 			padding: 0 8px;
 			
 			&.demo {
-				.button;
+				.button-orange;
 				
 			}
 			&:nth-last-child(2) {
 					padding-right:13px;
 				}
 		}
-		
-		
-			
 	}
+	
+	.contact {
+		float:right;
+		color: @grey;
+		margin-right:10px;
+		.grey-link;
+		
+		p {
+			display:inline-block;
+			padding-right:5px;
+		}
+		
+		[class^="icon-"] {
+			height: 25px;
+			width: 25px;
+			display: inline-block;
+			fill: @cso-blue;
+			margin-bottom: -6px;
+		}
+	}
+	
+	.search {
+		float: right;
+		margin-top: 10px;
+		clear: right;
+		margin-right: 10px;
+	}
+		
 }
