@@ -1,0 +1,128 @@
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+
+
+@import "normalize.css";
+//@import "main.css";
+
+// Colors
+
+@cso-blue: rgb(43,133,196);
+@cso-orange: rgb(247,147,30);
+@cso-dkblue: rgb(33,89,147);
+@cso-ltblue: rgb(245,245,245);
+@black: rgb(51,51,51);
+@white: rgb(255,255,255);
+
+// Fonts
+
+.roboto {
+	font-family: 'Roboto', sans-serif;
+}
+
+.condensed {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+// Body
+
+body {
+	.roboto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	.condensed;
+}
+	
+a {
+	color: @cso-blue;
+	text-decoration:none;
+	
+	&:hover, &:active, &:focus {
+		color: @cso-dkblue;
+	}
+}
+
+// Buttons
+
+.button {
+	background-color: @cso-orange;
+	border-radius: 3px;
+	padding:1px 5px;
+	
+	&:hover, &:active, &:focus {
+		background-color: lighten(@cso-orange, 10%);
+		transition: background-color .5s ease-in-out;
+	}
+	
+	a {
+		color:@white;
+		&:hover, &:active, &:focus {
+			color:@white;
+		}
+	}
+}
+
+		
+
+.cso-circle {
+	fill: @cso-blue;
+}
+
+.cso path {
+	fill: @white;
+}
+
+.research path {
+	fill: lighten(@cso-blue, 25%);
+}
+
+// Header
+
+#header {
+	width:100%;
+	height:200px;
+	
+	.contact {
+		float:right;
+	}
+
+	.logo {
+		margin:20px;
+		display:inline-block;
+		
+		svg {
+		width:120px;
+		height:120px;
+		}
+	}
+	
+	nav {
+		height:150px;
+		vertical-align:middle;
+		font-size: 1.3em;
+		display:inline-block;
+		
+		ul {
+			list-style:none;
+			display:inherit;
+			padding:0;
+			margin:0;
+		}
+		li {
+			display:inline;
+			padding: 0 8px;
+			
+			&.demo {
+				.button;
+				
+			}
+			&:nth-last-child(2) {
+					padding-right:13px;
+				}
+		}
+		
+		
+			
+	}
+}
