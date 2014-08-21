@@ -24,6 +24,7 @@
 
 .condensed {
 	font-family: 'Roboto Condensed', sans-serif;
+	font-weight:300;
 }
 
 // Body
@@ -35,6 +36,17 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	.condensed;
+}
+
+.main {
+	h2 {
+		font-size:3em;
+		color:@cso-orange;
+	}
+	h3 {
+		font-size:2em;
+		color:@cso-orange;
+	}
 }
 	
 a {
@@ -56,16 +68,24 @@ a {
 	}
 }
 
+.small {
+	font-size:.8em;
+}
+
 // Buttons
+
+.btn-ease {
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
 
 .button-orange, .button-blue {
 	border-radius: 3px;
 	padding:1px 5px;
 	border:none;
-	
-	&:hover, &:active, &:focus {
-		transition: background-color .5s ease-in-out;
-	}
+	.btn-ease;
 }
 
 .button-orange {
@@ -73,7 +93,8 @@ a {
 	color:@white;
 	
 	&:hover, &:active, &:focus {
-		background-color: lighten(@cso-orange, 10%);
+		//background-color: fade(@cso-orange, 50%);
+		text-shadow: 1px 1px 1px darken(@cso-orange, 30%);
 	}
 	
 	a {
@@ -89,7 +110,7 @@ a {
 	color:@white;
 	
 	&:hover, &:active, &:focus {
-		background-color: lighten(@cso-blue, 10%);
+		background-color: darken(@cso-blue, 10%);
 	}
 	
 	a {
@@ -149,25 +170,48 @@ input[type="submit"] {
 			display:inherit;
 			padding:0;
 			margin:0;
+			
+			ul {
+			display:none;
+			position:absolute;
+			padding:5px 0px;
+			background-color:@white;
+			font-size:.8em;
+			border-bottom: 2px solid @cso-blue;
+
+			}
 		}
 		li {
-			display:inline;
+			display:inline-block;
 			padding: 0 8px;
+			position:relative;
+			
+			&:hover > ul {
+				display:block;
+			}
+			
+			li {
+				display:block;
+			}
+			
+			//demo button
 			
 			&.demo {
 				.button-orange;
 				
 			}
 			&:nth-last-child(2) {
-					padding-right:13px;
-				}
+				padding-right:13px;
+			}
+			
 		}
+		
 	}
 	
 	.contact {
 		float:right;
 		color: @grey;
-		margin-right:10px;
+		margin-right:20px;
 		.grey-link;
 		
 		p {
@@ -188,7 +232,171 @@ input[type="submit"] {
 		float: right;
 		margin-top: 10px;
 		clear: right;
-		margin-right: 10px;
+		margin-right: 20px;
 	}
 		
+}
+
+// Content
+
+#content {
+	width:100%;
+	
+	#title-bar {
+		background-color:@cso-ltblue;
+		width:100%;
+		height: 220px;
+		
+		h1, h2 {
+			float:right;
+			margin-right:30px;
+			color:@cso-blue;
+		}
+		
+		h1 {
+			font-size:5em;
+			margin-top:10px;
+			margin-bottom:5px;
+		}
+		
+		h2 {
+			clear:right;
+			font-size:3em;
+			margin-top:5px;
+		}
+		
+	}
+	
+	.breadcrumbs {
+		margin-left:30px;
+		font-size:.8em;
+		color: @grey;
+		.grey-link;
+		margin-bottom:20px;
+	}
+	
+	.sidebar {
+		width:200px;
+		margin-left:30px;
+		display:inline-block;
+		vertical-align:top;
+		color:@cso-blue;
+		font-size:1.2em;
+		
+		nav {
+			ul {
+				list-style:none;
+				padding-left:20px;
+			}
+			
+			ul:first-child {
+				padding-left:0;
+				
+			}
+			
+			ul:nth-child(2) {
+				margin-top:5px;
+				font-size:.8em;
+			}
+		}
+	}
+	
+	.main {
+		width: calc(~"100% - 300px");
+		margin: 0 30px;
+		display:inline-block;
+		vertical-align:top;
+		
+		h2:first-child {
+		margin-top:0;
+		}
+	}
+	
+		
+}
+
+// Footer
+
+#footer {
+	width:100%;
+
+	.mid-bar {
+		width:inherit;
+		background-color:@cso-ltblue;
+		
+		nav {
+			width:1000px;
+			margin-left:auto;
+			margin-right:auto;
+			padding-top: 10px;
+			padding-bottom: 105px;
+			.grey-link;
+			
+			ul, li {
+				display:inline-block;
+				padding:0;
+				margin:0;
+				
+			}
+			
+			li {
+				width: calc(~"975px / 5");
+				position:relative;
+				.condensed;
+				font-size:1.2em;
+				
+				ul {
+					position:absolute;
+					margin-top: 30px;
+					left: 0;
+				}
+				
+				ul li {
+					display:block;
+					width:auto;
+					.roboto;
+					font-size: 0.6em;
+				}
+			}
+			
+		}		
+		
+	}
+	
+		
+	.bot-bar {
+		width:inherit;
+		height:100px;
+		background-color:@white;
+		font-size:0.8em;
+		.grey-link;
+		
+		.left {
+			float:left;
+			margin-left:20px;
+		}
+		
+		.right {
+			float:right;
+			margin-right:20px;
+			
+			p {
+				float:right;
+			}
+		}
+		
+		[class^="icon-"] {
+			height: 25px;
+			width: 25px;
+			display: inline-block;
+			fill: @cso-blue;
+			margin-bottom: -6px;
+		}
+		
+		.search {
+		float: right;
+		margin-top: 10px;
+		clear: right;
+		}
+	}
 }
