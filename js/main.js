@@ -28,6 +28,7 @@ jQuery('.nav-icon').click(function() {
     jQuery(this).toggleClass('active');
 });
 
+// Smooth scrolling for jump to nav
 
 $(function() {
 	$('a[href*=#]:not([href=#])').click(function() {
@@ -43,4 +44,27 @@ $(function() {
 			}
 		}
 	});
+});
+
+
+// Toggle for client services navigation
+
+jQuery(document).ready(function(){
+  jQuery(".toggle-main-support").click(function(){
+    jQuery(".toggle-sub-support").toggle("fast","linear");
+  });
+});
+
+jQuery('.toggle-main-support').click(function() {
+    jQuery(this).toggleClass('active');
+});
+
+jQuery(document).ready(function(){
+  jQuery(".toggle-main-university").click(function(){
+    jQuery(".toggle-sub-university").toggle("fast","linear");
+  });
+});
+
+jQuery('.toggle-main-university').click(function() {
+    jQuery(this).toggleClass('active');
 });
