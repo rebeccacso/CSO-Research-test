@@ -399,19 +399,9 @@ input[type="submit"] {
 			&:hover > ul {
 				visibility:hidden;
 				opacity:0;
-			}
-			
-		}
-		
-		
-		
-	}
-	
-
-	
-	
-		
-		
+			}			
+		}		
+	}		
 }
 
 // Content
@@ -629,9 +619,12 @@ input[type="submit"] {
 	
 	#title {
 		width:25em;
+		float:left;
+		margin-top: -0.6em;
 		
 		h2 {
 			display:inline;
+			color:@cso-blue;
 		}
 		
 		[class^="icon-square-"], [class*=" icon-square-"] {
@@ -640,9 +633,41 @@ input[type="submit"] {
 			fill:@cso-blue;
 			float:left;	
 			padding-right:1em;
-			padding-top:.7em;
+			padding-top:.6em;
 		}
 	}
+	
+	.info {
+		float:right;
+		width:calc(~"100% - 65em");
+		max-width:25em;
+		height:7em;
+		border:solid .2em @cso-ltblue;
+		border-radius:1em;
+	}
+	
+	.main {
+		
+		h3 {
+			color:@cso-blue;
+		}
+		
+		h3:first-of-type {
+			clear:both;
+			margin-top:5em;
+		}
+		
+		[class^="icon-square-"], [class*=" icon-square-"] {
+			width:1em;
+			height:1em;
+			fill:@cso-blue;
+			float:left;
+			padding-top: .2em;
+			padding-right: .2em;
+		}
+		
+	}
+	
 	
 	
 	#quick-support {
@@ -708,14 +733,10 @@ input[type="submit"] {
 					display:inline-block;
 					width:18%;
 				}
-			}
-			
-			
+			}			
 		}
 	}
-	
-	
-	
+		
 	#sidebar {
 		
 		input#s {
@@ -764,14 +785,9 @@ input[type="submit"] {
 				
 				.icon-caret-right {
 					transform:rotate(90deg);
-				}
-				
-			}
-			
-		}
-				
-		
-		
+				}				
+			}			
+		}		
 	}
 }
 
