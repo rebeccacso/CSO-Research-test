@@ -163,6 +163,15 @@ input[type="submit"] {
 	fill: lighten(@cso-blue, 25%);
 }
 
+// Breakpoints
+
+@breakpoint-1: ~"screen and (max-width: 74em)"; // 1184px
+@breakpoint-2: ~"screen and (max-width: 61.5em)"; // 984px
+@breakpoint-3: ~"screen and (max-width: 50em)"; // 800px
+@breakpoint-4: ~"screen and (max-width: 40em)"; //640px
+@breakpoint-5: ~"screen and (max-width: 31em)"; // 496px
+@breakpoint-6: ~"screen and (max-width: 21em)"; // 336px
+
 
 // Header
 
@@ -172,7 +181,7 @@ input[type="submit"] {
 	position:relative;
 	font-size:1em;
 	
-	@media screen and (max-width:61.5em) {
+	@media @breakpoint-2 {
 		font-size:.8em;
 	}
 
@@ -193,7 +202,7 @@ input[type="submit"] {
 		.btn-ease;
 		margin-top: calc(~"6em / 2");
 		
-		@media screen and (max-width:50em) {
+		@media @breakpoint-3 {
 			display:none;
 		}
 		
@@ -280,7 +289,7 @@ input[type="submit"] {
 			}
 		}
 		
-		@media screen and (max-width:31em){
+		@media @breakpoint-5{
 		
 			display:none;
 			
@@ -296,7 +305,7 @@ input[type="submit"] {
 	.search {
 		margin-top: calc(~"8.2em / 2");
 		
-		@media screen and (max-width:74em) {
+		@media @breakpoint-1 {
 			display:none;
 			position: absolute;
 			right: 0;
@@ -305,7 +314,7 @@ input[type="submit"] {
 			padding:.5em;
 		}
 		
-		@media screen and (max-width:50em) {
+		@media @breakpoint-3 {
 			font-size:2em;
 			width:100%;
 			top:0;
@@ -325,28 +334,28 @@ input[type="submit"] {
 		margin-top: calc(~"7.6em / 2");
 		padding:.125em .3em .3em .3em;
 		
-		@media screen and (max-width:31em){
+		@media @breakpoint-5{
 			margin-top: calc(~"4.9em / 2");
 		}
 		
 	}
 		
 	.search-icon {
-		@media screen and (max-width:74em) {
+		@media @breakpoint-1 {
 			display:block;
 		}
-		@media screen and (max-width:50em) {
+		@media @breakpoint-3 {
 			margin-right:0;
 		}		
 		
 	}
 	
 	.nav-icon {
-		@media screen and (max-width:50em) {
+		@media @breakpoint-3 {
 			display:block;
 		}
 		
-		@media screen and (max-width:31em) {
+		@media @breakpoint-5 {
 			margin-right:0;
 		}
 		
@@ -357,13 +366,13 @@ input[type="submit"] {
 		width:1.875em;
 		fill: @grey;
 		
-		@media screen and (max-width:50em) {
+		@media @breakpoint-3 {
 			height:4em;
 			width:4em;
 			fill: @cso-blue;
 		}
 		
-		@media screen and (max-width:31em){
+		@media @breakpoint-5{
 			height:5em;
 			width:5em;
 		}
@@ -384,7 +393,7 @@ input[type="submit"] {
 		line-height: 1.8em;
 		box-shadow: 0 .2em .1em darken(@cso-ltblue, 10%);
 		
-		@media screen and (max-width:31em) {
+		@media @breakpoint-5 {
 			right:0;
 		}
 		
@@ -414,15 +423,15 @@ input[type="submit"] {
 		width:100%;
 		height: 13.75em;
 		
-		@media screen and (max-width:61.5em) {
+		@media @breakpoint-2 {
 			font-size:.8em;
 		}
 		
-		@media screen and (max-width:50em) {
+		@media @breakpoint-3 {
 			font-size:.6em;
 		}
 		
-		@media screen and (max-width:31em) {
+		@media @breakpoint-5 {
 			font-size:.4em;
 		}
 		
@@ -431,7 +440,7 @@ input[type="submit"] {
 			margin-right:@medium-margin;
 			color:@cso-blue;
 			
-			@media screen and (max-width:50em) {
+			@media @breakpoint-3 {
 				margin-right:10px;
 			}
 		}
@@ -457,11 +466,11 @@ input[type="submit"] {
 		.grey-link;
 		margin-bottom:1.5em;
 		
-		@media screen and (max-width:50em) {
+		@media @breakpoint-3 {
 			margin-left:10px;
 		}
 		
-		@media screen and (max-width:31em) {
+		@media @breakpoint-5 {
 			display:none;
 		}
 		
@@ -483,7 +492,7 @@ input[type="submit"] {
 			
 		}
 		
-		@media screen and (max-width:31em){
+		@media @breakpoint-5{
 			display:block;
 
 		}
@@ -513,13 +522,13 @@ input[type="submit"] {
 		float:right;
 		vertical-align:top;
 		
-		@media screen and (max-width:50em) {
+		@media @breakpoint-3 {
 			font-size:.8em;
 			width: calc(~"100% - 17.9em");
 			margin-right:@small-margin;
 		}
 		
-		@media screen and (max-width:31em) {
+		@media @breakpoint-5 {
 			float:none;
 			font-size:.8em;
 			width: calc(~"100% - 21px");
@@ -527,7 +536,7 @@ input[type="submit"] {
 		}
 		
 		h2 {
-			@media screen and (max-width:50em) {
+			@media @breakpoint-3 {
 				font-size:2.5em;
 			}
 		}
@@ -550,13 +559,13 @@ input[type="submit"] {
 			margin-bottom:.7em;
 		}
 		
-		@media screen and (max-width:50em) {
+		@media @breakpoint-3 {
 			font-size:1em;
 			margin-left:@small-margin;
 			margin-right:1.5em;
 		}
 		
-		@media screen and (max-width:31em) {
+		@media @breakpoint-5 {
 			float:none;
 			margin-left: @small-margin;
 			margin-right: @small-margin;
@@ -575,7 +584,7 @@ input[type="submit"] {
 			
 		}
 		
-		@media screen and (max-width:21em) {
+		@media @breakpoint-6 {
 			.menus, .widgets {
 				display:block;
 				width:100%;
@@ -621,6 +630,7 @@ input[type="submit"] {
 		width:25em;
 		float:left;
 		margin-top: -0.6em;
+		margin-bottom:2em;
 		
 		h2 {
 			display:inline;
@@ -639,11 +649,18 @@ input[type="submit"] {
 	
 	.info {
 		float:right;
-		width:calc(~"100% - 65em");
-		max-width:25em;
+		width:25em;
 		height:7em;
 		border:solid .2em @cso-ltblue;
 		border-radius:1em;
+		
+		@media @breakpoint-1 {
+			float:none;
+			clear:both;
+			width:calc(~"100% - 4em");
+			margin:2em;
+		}
+		
 	}
 	
 	.main {
@@ -654,7 +671,6 @@ input[type="submit"] {
 		
 		h3:first-of-type {
 			clear:both;
-			margin-top:5em;
 		}
 		
 		[class^="icon-square-"], [class*=" icon-square-"] {
@@ -705,15 +721,15 @@ input[type="submit"] {
 			}
 		}
 		
-		@media screen and (max-width:61.5em) {
+		@media @breakpoint-2 {
 			font-size:1em;			
 		}
 		
-		@media screen and (max-width:50em) {
+		@media @breakpoint-3 {
 			top:18em;			
 		}
 		
-		@media screen and (max-width:31em) {
+		@media @breakpoint-5 {
 			top:auto;
 			bottom:0;
 			width:100%;
@@ -792,6 +808,78 @@ input[type="submit"] {
 }
 
 
+// Home
+
+#home {
+	width:100%;
+	
+	#tagline {
+		width:inherit;
+		text-align:center;
+		
+		svg {
+			width: 700px;
+			
+			path {
+				fill: @cso-orange;
+			}
+			
+			tspan {
+				fill: @cso-blue;
+				.roboto;
+			}
+			
+			@media @breakpoint-2 {
+				width:90%;
+			}
+		}				
+	}
+	
+	.overview {
+		width:100%;
+		background-color:@cso-ltblue;
+		padding:1.5em;
+		margin-top:1.5em;		
+
+		.overview-item {
+			width:(100% - 11em) / 4;
+			text-align:center;
+			display:inline-block;
+			padding:1em;
+			vertical-align:top;
+			
+		
+			
+			svg {
+				width:12em;
+				height:12em;
+				border-radius:50%;
+				
+				circle {
+					fill: @cso-blue;
+					width:12.1em;
+					height:12.1em;
+				}
+				
+				path {
+					fill: @white;
+				}
+				&:hover {
+					box-shadow:.3em .3em .5em darken(@cso-grey, 20%);
+				}
+			}
+			
+			h3 {
+				font-size: 1.5em;
+			}
+			
+			p {
+				font-size: 1.2em;
+			}
+		}
+	}
+}
+
 
 // Footer
 
@@ -811,19 +899,19 @@ input[type="submit"] {
 			padding: .625em .5em 6.8em;
 			.grey-link;
 			
-			@media screen and (max-width:61.5em) {
+			@media @breakpoint-2 {
 				width:100%;
 			}
 				
-			@media screen and (max-width:50em) {
+			@media @breakpoint-3 {
 				font-size:.8em;
 			}
 			
-			@media screen and (max-width:40em) {
+			@media @breakpoint-4 {
 				padding-bottom:.9em;
 			}	
 			
-			@media screen and (max-width:31em) {
+			@media @breakpoint-5 {
 				padding-left:0;
 			}
 			
@@ -836,7 +924,7 @@ input[type="submit"] {
 			}
 			
 			ul {
-				@media screen and (max-width:31em) {
+				@media @breakpoint-5 {
 					text-align:center;
 				}
 			}
@@ -847,15 +935,15 @@ input[type="submit"] {
 				.condensed;
 				font-size:1.2em;
 				
-				@media screen and (max-width:61.5em) {
+				@media @breakpoint-2 {
 					width:calc(~"("~"100% - 1em"~")"~" / 5");
 				}	
 				
-				@media screen and (max-width:40em) {
+				@media @breakpoint-4 {
 					text-align:center;
 				}	
 				
-				@media screen and (max-width:31em) {
+				@media @breakpoint-5 {
 					width:auto;
 					padding:0 .5em;	
 				}
@@ -866,7 +954,7 @@ input[type="submit"] {
 					margin-top: 1.875em;
 					left: 0;
 					
-					@media screen and (max-width:40em) {
+					@media @breakpoint-4 {
 						display:none;
 					}
 				}
@@ -904,7 +992,7 @@ input[type="submit"] {
 			p {
 				float:right;
 				
-				@media screen and (max-width:31em) {
+				@media @breakpoint-5 {
 					float:none;
 				}
 			}
@@ -913,7 +1001,7 @@ input[type="submit"] {
 		
 		.left, .right {
 			
-			@media screen and (max-width:31em) {
+			@media @breakpoint-5 {
 				float:none;
 				margin-left:auto;
 				margin-right:auto;
@@ -942,7 +1030,7 @@ input[type="submit"] {
 				width:8em;
 			}
 		
-			@media screen and (max-width:31em) {
+			@media @breakpoint-5 {
 				display:none;
 			
 			}
