@@ -87,6 +87,13 @@ a {
 	font-size:.8em;
 }
 
+/*clearfix http://css-tricks.com/snippets/css/clear-fix/ */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 @tiny-margin: 10px;
 @small-margin: 20px;
 @medium-margin: 30px;
@@ -103,7 +110,6 @@ a {
 
 .button-orange, .button-blue {
 	border-radius: .2em;
-	padding:0.04em 0.313em 0.08em 0.313em;
 	border:none;
 	.btn-ease;
 }
@@ -111,6 +117,7 @@ a {
 .button-orange {
 	background-color: @cso-orange;
 	color:@white;
+	padding:0.04em 0.313em 0.08em 0.313em;
 	
 	&:hover, &:active, &:focus {
 		//background-color: fade(@cso-orange, 50%);
@@ -128,6 +135,8 @@ a {
 .button-blue {
 	background-color: @cso-blue;
 	color:@white;
+	.condensed;
+	padding:0.04em 0.5em 0.08em 0.5em;
 	
 	&:hover, &:active, &:focus {
 		background-color: darken(@cso-blue, 10%);
@@ -836,36 +845,61 @@ input[type="submit"] {
 	}
 	
 	.overview {
-		width:100%;
+		width:calc(~"100% - 3em");
 		background-color:@cso-ltblue;
 		padding:1.5em;
-		margin-top:1.5em;		
+		margin-top:1.5em;
+		
+				
+		@media @breakpoint-1 {
+			font-size:.8em;
+		}	
 
 		.overview-item {
-			width:(100% - 11em) / 4;
+			width:calc(~"(100% - 8em) / 4");
 			text-align:center;
-			display:inline-block;
+			float:left;
 			padding:1em;
 			vertical-align:top;
+	
 			
-		
+			@media @breakpoint-2 {
+				width:calc(~"(100% - 4em) / 2");
+				
+				&:nth-child(3) {
+					clear:left;
+					
+				}
+				
+			}
+			
+			@media @breakpoint-5 {
+				width:calc(~"100% - 2em");
+				float:none;
+				clear:both;				
+			}
 			
 			svg {
 				width:12em;
 				height:12em;
 				border-radius:50%;
+				.btn-ease;
 				
 				circle {
 					fill: @cso-blue;
-					width:12.1em;
-					height:12.1em;
+					.btn-ease;
 				}
 				
 				path {
 					fill: @white;
 				}
+				
 				&:hover {
-					box-shadow:.3em .3em .5em darken(@cso-grey, 20%);
+					box-shadow:.3em .3em .5em fade(@grey, 80%);
+					
+					circle {
+						fill: darken(@cso-blue, 5%);
+					}
 				}
 			}
 			
@@ -875,6 +909,73 @@ input[type="submit"] {
 			
 			p {
 				font-size: 1.2em;
+			}
+		}
+	}
+	
+	.details {
+		width:calc(~"100% - 6em");
+		padding:3em;
+		
+		.description {
+			float:left;
+			width:calc(~"67% - 1em");
+			margin-bottom:2em;
+			
+			h2 {
+				font-size:2em;
+				margin-top:0;
+			}
+			
+			button {
+				float:right;
+				font-size:1.5em;
+			}
+			
+		}
+		
+		.diagram {
+			float:left;
+			width:calc(~"33% - 1em");
+			background-color:@cso-ltblue;
+			margin-left:2em;
+			text-align:center;
+		}
+		
+		&:nth-child(even) {
+			.description {
+				float:right;
+				margin-left:2em;
+			}
+			
+			.diagram {
+				margin-left:0;
+			}
+		}	
+		
+		
+		.more-icons {
+			margin:2em auto;
+			clear:both;
+			width:100%;
+			max-width:60em;
+			padding:1em;
+			
+			.item {
+				float:left;
+				text-align:center;
+				width:calc(~"(100% - 2em) / 4");
+							
+				svg {
+					fill: @cso-blue;
+					height:7em;
+					width:7em;
+				}
+				
+				p {
+					font-size:1.5em;
+					.condensed;
+				}
 			}
 		}
 	}
