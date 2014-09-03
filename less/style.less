@@ -400,7 +400,8 @@ input[type="submit"] {
 		background-color:@cso-ltblue;
 		padding: .5em;
 		line-height: 1.8em;
-		box-shadow: 0 .2em .1em darken(@cso-ltblue, 10%);
+		box-shadow: -0.2em 0.2em 0.1em 0 fade(@black, 10%);
+		z-index:5;
 		
 		@media @breakpoint-5 {
 			right:0;
@@ -822,9 +823,12 @@ input[type="submit"] {
 #home {
 	width:100%;
 	
+	
 	#tagline {
 		width:inherit;
 		text-align:center;
+		position:relative;
+		z-index:2;
 		
 		svg {
 			width: 700px;
@@ -848,7 +852,9 @@ input[type="submit"] {
 		width:calc(~"100% - 3em");
 		background-color:@cso-ltblue;
 		padding:1.5em;
-		margin-top:1.5em;
+		margin-top:2em;
+		position:relative;
+		z-index:2;
 		
 				
 		@media @breakpoint-1 {
@@ -916,6 +922,9 @@ input[type="submit"] {
 	.details {
 		width:calc(~"100% - 6em");
 		padding:3em;
+		background-color:@white;
+		position:relative;
+		z-index:2;
 		
 		.description {
 			float:left;
@@ -935,31 +944,32 @@ input[type="submit"] {
 		}
 		
 		.diagram {
-			float:left;
+			float:right;
 			width:calc(~"33% - 1em");
 			background-color:@cso-ltblue;
 			margin-left:2em;
 			text-align:center;
 		}
 		
-		&:nth-child(even) {
+		&.right {
 			.description {
 				float:right;
 				margin-left:2em;
 			}
 			
 			.diagram {
+				float:left;
 				margin-left:0;
 			}
 		}	
 		
 		
 		.more-icons {
-			margin:2em auto;
+			margin:2em auto 0;
 			clear:both;
 			width:100%;
 			max-width:60em;
-			padding:1em;
+			padding: 1em 1em 0 1em;
 			
 			.item {
 				float:left;
@@ -975,10 +985,85 @@ input[type="submit"] {
 				p {
 					font-size:1.5em;
 					.condensed;
+					margin-bottom:0;
 				}
 			}
 		}
 	}
+	
+	.bg-image {
+		width:100%;
+		background-repeat: no-repeat;
+	    background-attachment: fixed;
+		background-size:cover;
+		text-align:center;
+		
+		p {
+			position:fixed;
+			font-size:4em;
+			color:@white;
+			top:25%;
+			margin:auto;
+			left: 0;
+			right: 0;
+			padding:0 2em;
+			display:none;
+			
+			span {
+				font-style: italic;
+				font-size: 0.6em;
+				line-height: 1em;
+				display: block;
+				margin-top: .5em;
+			}
+		}
+		
+		@media @breakpoint-1 {
+			font-size:.8em;
+			
+			p {
+				padding: 0 .5em;
+				top:18%;
+			}
+		}
+		
+		@media @breakpoint-3 {
+			font-size:.6em;
+		}
+		
+		@media @breakpoint-5 {
+			font-size:.4em;
+			p {
+				padding: 0 .2em;
+			}
+		}
+		
+		&.active p {
+			display:block;
+		}
+		
+		&.general {
+			background-image:url('../img/moss.jpg');
+		}
+		
+		&.system {
+			background-image:url('../img/newport.jpg');
+		}
+	
+		&.outcomes {
+			background-image:url('../img/veggies.jpg');
+		}
+		
+		&.connect {
+			background-image:url('../img/wysteria.jpg');
+		}
+		
+		&.coach {
+			background-image:url('../img/chains.jpg');
+		}
+	}
+	
+	
 }
 
 
