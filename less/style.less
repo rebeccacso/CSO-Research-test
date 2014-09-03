@@ -831,7 +831,7 @@ input[type="submit"] {
 		z-index:2;
 		
 		svg {
-			width: 700px;
+			width: 800px;
 			
 			path {
 				fill: @cso-orange;
@@ -852,7 +852,7 @@ input[type="submit"] {
 		width:calc(~"100% - 3em");
 		background-color:@cso-ltblue;
 		padding:1.5em;
-		margin-top:2em;
+		margin-top:3em;
 		position:relative;
 		z-index:2;
 		
@@ -901,7 +901,7 @@ input[type="submit"] {
 				}
 				
 				&:hover {
-					box-shadow:.3em .3em .5em fade(@grey, 80%);
+					box-shadow:0 0 .3em .1em fade(@grey, 80%);
 					
 					circle {
 						fill: darken(@cso-blue, 5%);
@@ -922,14 +922,16 @@ input[type="submit"] {
 	.details {
 		width:calc(~"100% - 6em");
 		padding:3em;
+		max-width:75em;
 		background-color:@white;
 		position:relative;
 		z-index:2;
+		margin:0 auto;
 		
 		.description {
 			float:left;
-			width:calc(~"67% - 1em");
-			margin-bottom:2em;
+			width:calc(~"68% - 2em");
+			margin-bottom:3em;
 			
 			h2 {
 				font-size:2em;
@@ -939,16 +941,18 @@ input[type="submit"] {
 			button {
 				float:right;
 				font-size:1.5em;
-			}
-			
+			}			
 		}
 		
 		.diagram {
 			float:right;
-			width:calc(~"33% - 1em");
-			background-color:@cso-ltblue;
-			margin-left:2em;
-			text-align:center;
+			width:calc(~"32% - 2em");
+			margin-left:4em;
+			
+			img {
+				width:100%;
+				height:auto;
+			}
 		}
 		
 		&.right {
@@ -980,13 +984,42 @@ input[type="submit"] {
 					fill: @cso-blue;
 					height:7em;
 					width:7em;
+					border-radius:50%;
+					.btn-ease;
+					
+					&:hover {
+						//box-shadow:0 0 .3em .1em fade(@grey, 80%);
+						fill: darken(@cso-blue, 5%);
+					}
 				}
+				
+				
 				
 				p {
 					font-size:1.5em;
 					.condensed;
 					margin-bottom:0;
 				}
+			}
+		}
+		
+		@media @breakpoint-2 {
+			font-size:.8em;
+		}
+		
+		@media @breakpoint-4 {
+			text-align:center;
+			
+			.description, .diagram {
+				float:none;
+				clear:both;
+				width:100%;
+				margin-left:auto;
+				margin-right:auto;
+			}
+			
+			.diagram {
+				max-width: 20em;
 			}
 		}
 	}
@@ -1073,6 +1106,7 @@ input[type="submit"] {
 	width:100%;
 	clear:both;
 	padding-top: 1.5em;
+	position: relative;
 
 	.mid-bar {
 		width:inherit;
