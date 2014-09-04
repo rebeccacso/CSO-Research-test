@@ -157,6 +157,13 @@ input[type="submit"] {
 	
 }
 
+//demo button
+			
+.demo {
+	.button-orange;
+				
+}
+
 	
 // Logo
 
@@ -189,6 +196,7 @@ input[type="submit"] {
 	height:10em;
 	position:relative;
 	font-size:1em;
+	z-index:3;
 	
 	@media @breakpoint-2 {
 		font-size:.8em;
@@ -260,12 +268,7 @@ input[type="submit"] {
 			}
 			
 			
-			//demo button
 			
-			&.demo {
-				.button-orange;
-				
-			}
 			&:nth-last-child(2) {
 				padding-right:0.813em;
 			}
@@ -329,10 +332,10 @@ input[type="submit"] {
 			top:0;
 			margin-right:0;
 			text-align:right;
-			box-shadow: 0 .2em .1em darken(@cso-ltblue, 10%);
+			box-shadow: 0 .2em .1em fade(@black, 10%);
 			
 			input#s {
-				width:calc(~"100% - 5em");
+				width:calc(~"100% - 5.5em");
 			}
 
 		}
@@ -389,6 +392,8 @@ input[type="submit"] {
 	
 	.active {
 		background-color:@cso-ltblue;
+		border:.2em solid @cso-ltblue;
+		border-radius:.2em;
 	}
 	
 	nav.mobile {
@@ -973,7 +978,6 @@ input[type="submit"] {
 			clear:both;
 			width:100%;
 			max-width:60em;
-			padding: 1em 1em 0 1em;
 			
 			.item {
 				float:left;
@@ -998,7 +1002,9 @@ input[type="submit"] {
 				p {
 					font-size:1.5em;
 					.condensed;
-					margin-bottom:0;
+					margin:0;
+					padding-left: .5em;
+					padding-right: .5em;
 				}
 			}
 		}
@@ -1009,17 +1015,43 @@ input[type="submit"] {
 		
 		@media @breakpoint-4 {
 			text-align:center;
+			padding:1.5em;
+			width:calc(~"100% - 3em");
 			
-			.description, .diagram {
+			&.right .description, .description, &.right .diagram, .diagram {
 				float:none;
 				clear:both;
 				width:100%;
 				margin-left:auto;
 				margin-right:auto;
+				
+				button {
+					margin-bottom:1em;
+				}
 			}
 			
 			.diagram {
 				max-width: 20em;
+			}
+			
+			.more-icons {
+				font-size:.8em;
+
+			}
+		}
+		
+		@media @breakpoint-5 {
+			.more-icons .item {
+				width:50%;
+				
+				&:nth-child(3) {
+					clear:left;					
+				}
+				
+				&:nth-child(3), &:nth-child(4) {
+					margin-top:2em;
+				}
+				
 			}
 		}
 	}
@@ -1094,6 +1126,36 @@ input[type="submit"] {
 		&.coach {
 			background-image:url('../img/chains.jpg');
 		}
+	}
+	
+	.contact-go {
+		width:calc(~"100% - 6em");
+		background-color:@cso-blue;
+		padding:3em;
+		text-align:center;
+		color:@white;
+		position:relative;
+		
+		h4 {
+			.condensed;
+			font-size:4em;
+			margin:0;
+		}
+		
+		.info {
+			font-size:2em;
+			.white-link;
+			
+			ul {
+				list-style:none;
+			}
+		}
+		
+		.info, .twitter {
+			float:left;
+			width:50%;
+		}
+		
 	}
 	
 	
